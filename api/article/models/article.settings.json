@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "name": "article"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Author": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Abstract": {
+      "type": "text"
+    },
+    "article": {
+      "type": "json"
+    },
+    "PDF": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
